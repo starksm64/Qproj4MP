@@ -12,7 +12,7 @@ $(document).ready(function(){
 function refreshToken(minValidity) {
     keycloak.updateToken(minValidity).success(function(refreshed) {
         if (refreshed) {
-            //output(keycloak.tokenParsed);
+            output(keycloak.tokenParsed);
         } else {
             output('Token not refreshed, valid for ' + Math.round(keycloak.tokenParsed.exp + keycloak.timeSkew - new Date().getTime() / 1000) + ' seconds');
         }
